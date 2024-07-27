@@ -1,0 +1,16 @@
+package system
+
+import (
+	"github.com/gin-gonic/gin"
+	v1 "github.com/xiaohongshu/PnSql/server/api/v1"
+)
+
+type Login struct{}
+
+func (s *Login) InitLoginRouter(Router *gin.RouterGroup) {
+	loginRouter := Router.Group("")
+	loginApi := v1.ApiGroupApp.SystemApiGroup.Login
+	{
+		loginRouter.GET("login", loginApi.Login)
+	}
+}
