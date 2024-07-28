@@ -8,9 +8,11 @@ import (
 type Login struct{}
 
 func (s *Login) InitLoginRouter(Router *gin.RouterGroup) {
-	loginRouter := Router.Group("")
+	loginRouter := Router.Group("login")
 	loginApi := v1.ApiGroupApp.SystemApiGroup.Login
 	{
-		loginRouter.GET("login", loginApi.Login)
+		loginRouter.GET("get", loginApi.Login)
+		loginRouter.POST("post", loginApi.ToLogin)
+		loginRouter.POST("register", loginApi.RegisterUser)
 	}
 }

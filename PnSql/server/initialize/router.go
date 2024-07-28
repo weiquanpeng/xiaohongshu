@@ -3,6 +3,7 @@ package initialize
 import (
 	"fmt"
 	"github.com/gin-gonic/gin"
+	"github.com/xiaohongshu/PnSql/server/common/filter"
 	"github.com/xiaohongshu/PnSql/server/global"
 	"github.com/xiaohongshu/PnSql/server/router"
 )
@@ -10,13 +11,13 @@ import (
 func InitRouter() {
 	r := gin.New()
 	r.Use(gin.Recovery())
+	r.Use(filter.Cors())
 
 	systemRouter := router.AllRouter.Sys_Group
 
 	PublicGroup := r.Group("/api/v1/public")
 	{
 		systemRouter.InitLoginRouter(PublicGroup)
-		systemRouter.InitCodeRouter(PublicGroup)
 	}
 	//PrivateGroup := r.Group("/api/v1/")
 	//{

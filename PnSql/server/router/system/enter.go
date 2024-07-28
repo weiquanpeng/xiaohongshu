@@ -2,5 +2,4 @@ package system
 
 type SysGroup struct {
 	Login
-	CodeRouter
 }

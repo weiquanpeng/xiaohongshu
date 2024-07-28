@@ -13,17 +13,17 @@ const router = createRouter({
       component: () => import('@/views/Login.vue')
     },
     {
-      path: '/sit',
-      name: 'sit',
-      component: () => import('@/views/sit.vue')
-    },
-    {
       path: '/:catchAll(.*)',
       meta: {
         closeTab: true,
       },
       component: () => import('@/views/404.vue')
-    }
+    },
+    {
+        path: '/sit',
+        name: 'sit',
+        component: () => import('@/views/sit.vue')
+    },
   ]
 })
 

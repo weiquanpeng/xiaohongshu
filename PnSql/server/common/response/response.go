@@ -13,7 +13,7 @@ type Response struct {
 }
 
 const (
-	ERROR   = 7
+	ERROR   = 601
 	SUCCESS = 200
 )
 
@@ -60,4 +60,8 @@ func NoAuth(message string, c *gin.Context) {
 
 func FailWithDetailed(data interface{}, message string, c *gin.Context) {
 	Result(ERROR, data, message, c)
+}
+
+func FailWithDecide(d int, data interface{}, c *gin.Context) {
+	Result(d, data, "", c)
 }

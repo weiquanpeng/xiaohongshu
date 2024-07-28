@@ -7,5 +7,7 @@ import (
 
 func main() {
 	core.Viper()
+	initialize.InitDB()
+
 	initialize.InitRouter()
 }

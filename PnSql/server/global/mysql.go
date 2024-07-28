@@ -1,14 +1,12 @@
 package global
 
 type Mysql struct {
-	Host         string `mapstructure:"host" json:"host" yaml:"host"`
-	Port         string `mapstructure:"port" json:"port" yaml:"port"`
-	Username     string `mapstructure:"username" json:"username" yaml:"username"`
-	Password     string `mapstructure:"password" json:"password" yaml:"password"`
-	Dbname       string `mapstructure:"dbname" json:"dbname" yaml:"dbname"`
-	Config       string `mapstructure:"config" json:"config" yaml:"config"`
-	MaxIdleConns int    `mapstructure:"maxidleconns" json:"maxidleconns" yaml:"max-idle-conns"`
-	MaxOpenConns int    `mapstructure:"maxopenconns" json:"maxopenconns" yaml:"max-open-conns"`
+	Host     string `mapstructure:"host" json:"host" yaml:"host"`
+	Port     string `mapstructure:"port" json:"port" yaml:"port"`
+	Username string `mapstructure:"username" json:"username" yaml:"username"`
+	Password string `mapstructure:"password" json:"password" yaml:"password"`
+	Dbname   string `mapstructure:"dbname" json:"dbname" yaml:"dbname"`
+	Config   string `mapstructure:"config" json:"config" yaml:"config"`
 }
 
 func (m *Mysql) Dsn() string {
